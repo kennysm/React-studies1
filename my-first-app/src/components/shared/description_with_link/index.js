@@ -1,6 +1,10 @@
 import React, { Fragment } from "react";
 
 const DescriptionWithLink = (props) => {
+  if (!props.description) {
+    return null;
+  }
+
   if (props.link) {
     return (
       <Fragment>
@@ -13,7 +17,6 @@ const DescriptionWithLink = (props) => {
   } else {
     return (
       <Fragment>
-        <p>{props.description}</p>
         <p>
           <u>{props.description}</u>
         </p>
